@@ -1,5 +1,5 @@
 import "@/assets/css/globals.css";
-import { font } from "@/assets/fonts";
+import { bit8, jet } from "@/assets/fonts";
 
 export default function RootLayout({
   children,
@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.variable}  antialiased`}
+        className={`${jet.variable} ${bit8.variable}  antialiased`}
       >
         {children}
       </body>

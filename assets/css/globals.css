@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #fce4ec;
+  --foreground: #171717;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-jet);
+}
+
+
+@layer utilities {
+  .heading-bit8 {
+    transform: scaleY(1.1);
+    letter-spacing: -0.05em;
+    image-rendering: pixelated;
+    font-family: var(--font-bit8);
+  }
+}
+
+@layer components {
+  .pixel-btn {
+    cursor: pointer;
+    font-family: var(--font-bit8) !important;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    padding: 12px 20px;
+    background: #000;
+    color: #f06292;
+    border: 2px solid #f06292;
+    box-shadow:
+      4px 0 0 #000,
+      -4px 0 0 #000,
+      0 4px 0 #000,
+      0 -4px 0 #000;
+    transition: transform 0.05s steps(1), box-shadow 0.05s steps(1);
+  }
+
+  .pixel-btn:hover {
+    background: #111;
+  }
+
+  .pixel-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow:
+      0 0 0 #000;
+  }
 }
